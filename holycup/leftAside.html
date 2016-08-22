@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>holycup1</title>
+    <style>
+        .layout:after {
+            content: '';
+            display: table;
+            clear: both;
+        }
+
+        .layout {
+            padding-left: 220px;
+        }
+
+        .layout_aside, .layout_main{
+            float: left;
+        }
+
+        .layout_main {
+            width: 100%;
+            background: #ddd;
+        }
+
+        .layout_aside {
+            width: 210px;
+            margin-left: -220px;
+            background: #aaa;
+        }
+    </style>
+</head>
+<body>
+<div class="layout">
+    <aside class="layout_aside">aside</aside>
+    <div class="layout_main">main</div>
+</div>
+</body>
+</html>

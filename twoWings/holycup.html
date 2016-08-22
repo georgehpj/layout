@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        header, footer {
+            height: 40px;
+            background: #444;
+        }
+
+        .main {
+            background: #eee;
+        }
+
+        .aside {
+            background: #aaa;
+        }
+
+        body {
+            margin:0;
+            padding:0;
+            display: -webkit-flex;
+            display: flex;
+            flex-flow: column;
+            min-height: 100vh;
+        }
+
+        body > .container {
+            flex: 1;
+        }
+
+        .container:after{
+            content: '';
+            display: table;
+            clear: both;
+        }
+
+        .main, .aside{
+            float: left;
+        }
+
+        .main {
+            box-sizing: border-box;
+            padding: 0 100px 0 200px;
+            width: 100%;
+        }
+        
+        .aside--left{
+            width: 200px;
+            margin-left: -100%;
+        }
+        
+        .aside--right{
+            width:100px;
+            margin-left: -100px;
+        }
+    </style>
+</head>
+<body>
+<header>header</header>
+<section class="container">
+    <section class="main">main</section>
+    <aside class="aside aside--left">aside--left</aside>
+    <aside class="aside aside--right">aside--right</aside>
+</section>
+<footer>footer</footer>
+</body>
+</html>

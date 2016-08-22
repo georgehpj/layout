@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .layout:after {
+            content: '';
+            display: table;
+            clear: both;
+        }
+
+        .layout{
+            padding:0 220px;
+        }
+
+        .layout_main, .layout_aside_left{
+            float: left;
+        }
+
+        .layout_main {
+            width: 100%;
+            background: #ddd;
+        }
+
+        .layout_aside{
+            width: 210px;
+            background: #aaa;
+        }
+
+        .layout_aside_left{
+            margin-left: -220px;
+        }
+
+        .layout_aside_right{
+            float: right;
+            margin-right: -220px;
+        }
+    </style>
+</head>
+<body>
+<div class="layout">
+    <aside class="layout_aside layout_aside_left">left aside</aside>
+    <div class="layout_main">main</div>
+    <aside class="layout_aside layout_aside_right">right aside</aside>
+</div>
+</body>
+</html>

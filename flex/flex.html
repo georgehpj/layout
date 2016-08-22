@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        header, footer {
+            height: 40px;
+            background: #444;
+        }
+
+        body {
+            margin:0;
+            padding:0;
+            display: -webkit-flex;
+            display: flex;
+            flex-flow: column;
+            min-height: 100vh;
+        }
+
+        body > .container {
+            flex: 1;
+        }
+
+        .layout {
+            display: -webkit-flex;
+            display: flex;
+        }
+        .layout__main{
+            flex:1;
+            background: #eee;
+        }
+        .layout__aside{
+            width: 200px;
+            background: #bbb;
+        }
+
+        .layout > .layout__aside:not(:first-child),
+        .layout > .layout__main:not(:first-child){
+            margin-left: 10px;
+        }
+
+        .container > .layout:not(:last-child){
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<header>header</header>
+<section class="container">
+    <div class="layout">
+        <aside class="layout__aside">侧边栏宽度固定</aside>
+        <div class="layout__main">主内容栏宽度自适应</div>
+    </div>
+    <div class="layout">
+        <div class="layout__main">主内容栏宽度自适应</div>
+        <aside class="layout__aside">侧边栏宽度固定</aside>
+    </div>
+    <div class="layout">
+        <aside class="layout__aside">左侧边栏宽度固定</aside>
+        <div class="layout__main">主内容栏宽度自适应</div>
+        <aside class="layout__aside">右侧边栏宽度固定</aside>
+    </div>
+    <div class="layout">
+        <aside class="layout__aside">第1个侧边栏宽度固定</aside>
+        <aside class="layout__aside">第2个侧边栏宽度固定</aside>
+        <div class="layout__main">主内容栏宽度自适应</div>
+    </div>
+    <div class="layout">
+        <div class="layout__main">主内容栏宽度自适应</div>
+        <aside class="layout__aside">第1个侧边栏宽度固定</aside>
+        <aside class="layout__aside">第2个侧边栏宽度固定</aside>
+    </div>
+</section>
+<footer>footer</footer>
+</body>
+</html>
