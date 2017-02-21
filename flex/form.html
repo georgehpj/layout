@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .columns{
+            padding:20px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .column{
+            display: flex;
+            flex: auto;
+        }
+        .is-1of3{
+            flex:0 0 33.3%;
+        }
+        .is-2of5{
+            flex:0 0 40%;
+        }
+        .is-1of5{
+            flex:0 0 20%;
+        }
+        .column>label{
+            width: 30%;
+            padding:0 10px 0 20px;
+            text-align: right;
+        }
+        .column>input{
+            flex: auto;
+        }
+    </style>
+</head>
+<body>
+<div class="form">
+    <div class="columns">
+        <div class="column is-1of3">
+            <label for="id">ididididididididid:</label>
+            <input type="text" name="id">
+        </div>
+        <div class="column is-1of3">
+            <label for="id">idididididididid:</label>
+            <input type="text" name="id">
+        </div>
+        <div class="column is-1of3">
+            <label for="id">idididididid:</label>
+            <input type="text" name="id">
+        </div>
+    </div>
+    <div class="columns">
+        <div class="column is-1of3">
+            <label for="id">asdfasdf:</label>
+            <input type="text" name="id">
+        </div>
+        <div class="column is-1of3">
+            <label for="id">asdfasdfasdf:</label>
+            <input type="text" name="id">
+        </div>
+        <div class="column is-1of3">
+            <label for="id">asdf:</label>
+            <input type="text" name="id">
+        </div>
+    </div>
+</div>
+</body>
+</html>

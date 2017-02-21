@@ -5,7 +5,7 @@
     <title>Title</title>
     <style>
         header, footer {
-            height: 40px;
+            flex: 0 0 40px;
             background: #444;
         }
 
@@ -43,33 +43,55 @@
         .container > .layout:not(:last-child){
             margin-bottom: 10px;
         }
+        .layout .main:not(:first-child) {
+            margin-left:10px;
+        }
+        .layout .main{
+            flex-grow:1;
+            background-color: #eee;
+        }
+        .layout .main.half{
+            flex: 0 1 50%;
+            background-color: #bbb;
+        }
+        .layout div{
+            min-height:50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
     </style>
 </head>
 <body>
 <header>header</header>
 <section class="container">
     <div class="layout">
-        <aside class="layout__aside">侧边栏宽度固定</aside>
+        <div class="layout__aside">侧边栏宽度固定</div>
         <div class="layout__main">主内容栏宽度自适应</div>
     </div>
     <div class="layout">
         <div class="layout__main">主内容栏宽度自适应</div>
-        <aside class="layout__aside">侧边栏宽度固定</aside>
+        <div class="layout__aside">侧边栏宽度固定</div>
     </div>
     <div class="layout">
-        <aside class="layout__aside">左侧边栏宽度固定</aside>
+        <div class="layout__aside">左侧边栏宽度固定</div>
         <div class="layout__main">主内容栏宽度自适应</div>
-        <aside class="layout__aside">右侧边栏宽度固定</aside>
+        <div class="layout__aside">右侧边栏宽度固定</div>
     </div>
     <div class="layout">
-        <aside class="layout__aside">第1个侧边栏宽度固定</aside>
-        <aside class="layout__aside">第2个侧边栏宽度固定</aside>
+        <div class="layout__aside">第1个侧边栏宽度固定</div>
+        <div class="layout__aside">第2个侧边栏宽度固定</div>
         <div class="layout__main">主内容栏宽度自适应</div>
     </div>
     <div class="layout">
         <div class="layout__main">主内容栏宽度自适应</div>
-        <aside class="layout__aside">第1个侧边栏宽度固定</aside>
-        <aside class="layout__aside">第2个侧边栏宽度固定</aside>
+        <div class="layout__aside">第1个侧边栏宽度固定</div>
+        <div class="layout__aside">第2个侧边栏宽度固定</div>
+    </div>
+    <div class="layout">
+        <div class="main half">50%宽度</div>
+        <div class="main">flex:1</div>
+        <div class="main">flex:1</div>
     </div>
 </section>
 <footer>footer</footer>
