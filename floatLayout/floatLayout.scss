@@ -1,0 +1,143 @@
+$label_width: 150px !default;
+$grid-columns: 12 !default;
+$height: 28px !default;
+$label_right_padding: 10px !default;
+$border_radius: 2px !default;
+$long_input_min_width: 200px !default;
+$middle_input_min_width: 125px !default;
+$short_input_min_width: 50px !default;
+
+@mixin clear() {
+  &:after {
+    content: " ";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin float-grid-columns($i: 1, $list: ".is-#{$i}") {
+  @for $i from (1 + 1) through $grid-columns {
+    $list: "#{$list}, .is-#{$i}";
+  }
+  #{$list} {
+    float: left;
+  }
+}
+
+@mixin calc-grid-column($index, $type) {
+  @if ($type == width) and ($index > 0) {
+    .is-#{$index} {
+      width: percentage(($index / $grid-columns));
+    }
+  }
+  @if ($type == push) and ($index > 0) {
+    .is-push-#{$index} {
+      left: percentage(($index / $grid-columns));
+    }
+  }
+  @if ($type == push) and ($index == 0) {
+    .is-push-0 {
+      left: auto;
+    }
+  }
+  @if ($type == pull) and ($index > 0) {
+    .is-pull-#{$index} {
+      right: percentage(($index / $grid-columns));
+    }
+  }
+  @if ($type == pull) and ($index == 0) {
+    .is-pull-0 {
+      right: auto;
+    }
+  }
+  @if ($type == offset) {
+    .is-offset-#{$index} {
+      margin-left: percentage(($index / $grid-columns));
+    }
+  }
+}
+
+@mixin loop-grid-columns($columns, $type) {
+  @for $i from 0 through $columns {
+    @include calc-grid-column($i, $type);
+  }
+}
+
+@mixin make-grid() {
+  @include float-grid-columns();
+  @include loop-grid-columns($grid-columns, width);
+  @include loop-grid-columns($grid-columns, pull);
+  @include loop-grid-columns($grid-columns, push);
+  @include loop-grid-columns($grid-columns, offset);
+}
+
+@include make-grid;
+
+.club-form {
+  padding: 0 30px;
+  background-color: inherit;
+}
+
+.club-columns {
+  display: block;
+  margin-bottom: 15px;
+  @include clear;
+  &:last-child{
+    margin-bottom: 0;
+  }
+}
+
+.club-column{
+  float: left;
+  label {
+    font-weight: normal;
+    line-height: $height;
+    height: $height;
+    float: left;
+    width: $label_width;
+    box-sizing: border-box;
+    text-align: right;
+    padding-right: $label_right_padding;
+    margin: 0;
+  }
+  .club-input{
+    float: left;
+    width: calc(100% - #{$label_width});
+  }
+  input,select{
+    height: $height;
+  }
+  input,select,textarea{
+    width:100%;
+    line-height: $height;
+    display: block;
+    box-sizing: border-box;
+    border-radius: $border_radius;
+    border: 1px solid #dbdbdb;
+    color: #363636;
+    text-align: left;
+    min-width: $long_input_min_width;
+  }
+}
+
+
+.is-short-input{
+  min-width: $short_input_min_width + $label_width;
+  .club-input{
+    min-width: $short_input_min_width;
+  }
+  input,select,textarea{
+    min-width: $short_input_min_width;
+  }
+}
+
+.is-middle-input{
+  min-width: $middle_input_min_width + $label_width;
+  .club-input{
+    min-width: $middle_input_min_width;
+  }
+  input,select,textarea{
+    min-width: $middle_input_min_width;
+  }
+}
+

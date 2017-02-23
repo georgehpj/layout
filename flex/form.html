@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
-        input{
+        /*input{
             border-radius: 2px;
             -webkit-appearance: none;
             -webkit-box-align: center;
@@ -57,13 +57,80 @@
         .is-1of5{
             flex:0 0 20%;
         }
-        .column>label{
+        .input-column{
+            display: flex;
+            align-items: center;
+        }
+        .input-column.is-short{
+
+        }
+        .input-column>label{
             width: 200px;
             padding:0 10px 0 20px;
             text-align: right;
         }
-        .column>label+input{
+        .input-column>label+input{
             flex: auto;
+        }*/
+        .columns{
+            display: block;
+            padding: 20px;
+        }
+        .columns:after{
+            display: block;
+            content: '';
+            clear: both;
+        }
+        .column{
+            float: left;
+            margin-bottom: 10px;
+        }
+        .column.is-1of3{
+            width: 33.33%;
+        }
+        .input-column{
+            width: 100%;
+            min-width: 300px;
+        }
+        .input-column:after{
+            display: block;
+            content: '';
+            clear: both;
+        }
+        .input-column label{
+            line-height: 28px;
+            height: 28px;
+            float: left;
+            width: 200px;
+            box-sizing: border-box;
+            text-align: right;
+            padding-right: 10px;
+        }
+        .input-column input{
+            line-height: 28px;
+            height: 28px;
+            float: left;
+            width: calc(100% - 200px);
+            box-sizing: border-box;
+            border-radius: 2px;
+            border: 1px solid #dbdbdb;
+            color: #363636;
+            text-align: left;
+            min-width: 100px;
+        }
+        .is-short-column{
+            width: auto;
+            min-width: 230px;
+            margin-right:50%;
+        }
+        .is-short-column input{
+            min-width: 30px;
+        }
+        .column.is-half{
+            width: 50%;
+        }
+        .column.is-one-row{
+            width: 100%;
         }
     </style>
 </head>
@@ -71,40 +138,58 @@
 <div class="form">
     <div class="columns">
         <div class="column is-1of3">
-            <label for="id">ididididididididid:</label>
-            <input type="text" name="id">
+            <div class="input-column is-short-column">
+                <label for="id">ididididididididid:</label>
+                <input size="5" type="text" name="id">
+            </div>
         </div>
         <div class="column is-1of3">
-            <label for="id">idididididididid:</label>
-            <input type="text" name="id">
+            <div class="input-column">
+                <label for="id">ididididididididid:</label>
+                <input size="5" type="text" name="id">
+            </div>
         </div>
         <div class="column is-1of3">
-            <label for="id">idididididid:</label>
-            <input type="text" name="id">
+            <div class="input-column">
+                <label for="id">ididididididididid:</label>
+                <input size="5" type="text" name="id">
+            </div>
         </div>
         <div class="column is-1of3">
-            <label for="id">asdfasdf:</label>
-            <input type="text" name="id">
+            <div class="input-column">
+                <label for="id">ididididididididid:</label>
+                <input size="5" type="text" name="id">
+            </div>
         </div>
         <div class="column is-1of3">
-            <label for="id">asdfasdfasdf:</label>
-            <input type="text" name="id">
+            <div class="input-column">
+                <label for="id">ididididididididid:</label>
+                <input size="5" type="text" name="id">
+            </div>
         </div>
         <div class="column is-1of3">
-            <label for="id">asdf:</label>
-            <input type="text" name="id">
+            <div class="input-column">
+                <label for="id">ididididididididid:</label>
+                <input size="5" type="text" name="id">
+            </div>
         </div>
         <div class="column is-one-row">
-            <label for="id">asdf:</label>
-            <input type="text" name="id">
+            <div class="input-column">
+                <label for="id">ididididididididid:</label>
+                <input size="5" type="text" name="id">
+            </div>
         </div>
         <div class="column is-half">
-            <label for="id">asasdfdf:</label>
-            <input type="text" name="id">
+            <div class="input-column">
+                <label for="id">ididididididididid:</label>
+                <input size="5" type="text" name="id">
+            </div>
         </div>
         <div class="column is-half">
-            <label for="id">adsfasdf:</label>
-            <input type="text" name="id">
+            <div class="input-column">
+                <label for="id">ididididididididid:</label>
+                <input size="5" type="text" name="id">
+            </div>
         </div>
     </div>
 </div>

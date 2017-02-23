@@ -1,0 +1,28 @@
+{
+  "name": "layout",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/georgehpj/layout.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/georgehpj/layout/issues"
+  },
+  "homepage": "https://github.com/georgehpj/layout#readme",
+  "devDependencies": {
+    "autoprefixer": "^6.7.5",
+    "cssnext": "^1.8.4",
+    "gulp": "^3.9.1",
+    "gulp-connect": "^5.0.0",
+    "gulp-postcss": "^6.3.0",
+    "postcss": "^5.2.15",
+    "precss": "^1.4.0"
+  }
+}
